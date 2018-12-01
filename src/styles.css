@@ -1,0 +1,17 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ccc;
+}
+
+.align-center{
+    margin: 15px;
+    border: 1px dashed #777;
+    padding-top: 3px;
+    text-align: center;
+}
