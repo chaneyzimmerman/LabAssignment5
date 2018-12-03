@@ -1,7 +1,13 @@
 <div class="main-container-grid">
   <div class="align-center">r2c1</div>
   <div class="align-center">
-    <button (click)="addStudent()" class="add-button">Add Student</button>
+    <!-- <button (click)="addStudent()" class="add-button">Add Student</button> -->
+    <button (click)="addStudent()" type="button" class="btn btn-default add-button" aria-label="Left Align">
+      Add Student
+    </button>
+    <button (click)="saveStudent()" type="button" class="btn btn-default add-button" aria-label="Left Align">
+      Save
+    </button>
     <table class="table-one">
       <thead>
         <tr>
@@ -9,14 +15,41 @@
           <td>First Name</td>
           <td>Last Name</td>
           <td>Course</td>
+          <td></td>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let student of students">
+      <tbody *ngIf="editMode == false">
+        <tr *ngFor="let student of students; let i = index">
             <td>{{student.id}}</td>
             <td>{{student.FirstName}}</td>
             <td>{{student.LastName}}</td>
             <td>{{student.Course}}</td>
+            <td>
+              <button (click)="removeStudent(i)" type="button" class="btn btn-default add-button" aria-label="Left Align">
+                X
+              </button>
+            </td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="editMode == true">
+        <tr *ngFor="let student of students; let i = index" [ngClass]="{'new-form': student.id == null}">
+            <td>
+              <input [(ngModel)]="student.id" type="text" class="form-control" placeholder="ID" aria-describedby="basic-addon2">
+            </td>
+            <td>
+              <input [(ngModel)]="student.FirstName" type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon2">
+            </td>
+            <td>
+              <input [(ngModel)]="student.LastName" type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon2">
+            </td>
+            <td>
+              <input [(ngModel)]="student.Course" type="text" class="form-control" placeholder="Course" aria-describedby="basic-addon2">
+            </td>
+            <td>
+              <button (click)="removeStudent(i)" type="button" class="btn btn-default add-button" aria-label="Left Align">
+                X
+              </button>
+            </td>
         </tr>
       </tbody>
     </table>
