@@ -1,3 +1,6 @@
+@import '@angular/material/prebuilt-themes/purple-green.css';
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -11,7 +14,28 @@ body {
 
 .align-center{
     margin: 15px;
-    border: 1px dashed #777;
-    padding-top: 3px;
-    text-align: center;
+}
+
+.nav-button {
+    margin-right: 8px !important;
+}
+
+.table {
+    width: 100%;
+    border: 1px solid #777;
+}
+
+.table > tbody > tr > td, .table > thead > tr > td {
+    border: 1px solid #777;
+    min-height: 50px;
+    padding: .5em;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+table {
+    table-layout: fixed;
 }

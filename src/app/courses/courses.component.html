@@ -1,11 +1,5 @@
-
-<div class="main-container-grid">
-  <div class="align-center">r2c1</div>
-  <router-outlet class="router-outlet"></router-outlet>
-  <div class="align-center">r2c3</div>
-</div>
-
-<!-- <div class="align-center">
+<h3>Courses</h3>
+<div class="align-center">
     <button (click)="addStudent()" mat-raised-button color="accent" class="add-button">Add Student</button>
     <button (click)="saveStudent()" mat-raised-button color="accent" class="add-button">Save</button>
 
@@ -47,11 +41,11 @@
               <input [(ngModel)]="student.Course" type="text" class="form-control" placeholder="Course" aria-describedby="basic-addon2">
             </td>
             <td>
-              <button (click)="removeStudent(i)" type="button" class="btn btn-default add-button" aria-label="Left Align">
-                X
+              <button (click)="removeStudent(i)" mat-raised-button color="warn" class="add-button" aria-label="Left Align">
+                <mat-icon>delete</mat-icon>
               </button>
             </td>
         </tr>
       </tbody>
     </table>
-</div> -->
+</div>
